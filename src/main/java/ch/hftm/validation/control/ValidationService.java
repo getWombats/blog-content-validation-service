@@ -16,7 +16,7 @@ public class ValidationService {
     public Multi<ValidationResponse> validateTextMessages(Multi<ValidationRequest> requests) {
         return requests
                 .onItem().transform(request -> {
-                    boolean valid = !request.text().contains("simeon mag angular");
+                    boolean valid = !request.text().contains("simeon liebt angular");
                     Log.debug("Text-Validation: " + request.text() + " -> " + valid);
                     return new ValidationResponse(request.id(), valid);
                 });
